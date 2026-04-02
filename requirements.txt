@@ -1,0 +1,7 @@
+streamlit
+pymupdf
+pdfplumber
+python-docx
+requests
+pytesseract
+Pillow
