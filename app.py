@@ -112,10 +112,10 @@ def main() -> None:
         )
         base_url = st.text_input(
             "Base URL",
-            value="https://api.openai.com/v1",
+            value="https://api.deepseek.com",
             help="Any OpenAI-compatible endpoint.",
         )
-        model_name = st.text_input("Model", value="gpt-4o-mini")
+        model_name = st.text_input("Model", value="deepseek-chat")
         source_lang = st.text_input("Source Language", value="auto")
         target_lang = st.text_input("Target Language", value="zh")
         bilingual = st.checkbox("Bilingual output", value=False)
