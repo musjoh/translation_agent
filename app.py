@@ -117,9 +117,9 @@ def main() -> None:
         )
         model_name = st.text_input("Model", value="deepseek-chat")
         source_lang = st.text_input("Source Language", value="auto")
-        target_lang = st.text_input("Target Language", value="zh")
+        target_lang = st.text_input("Target Language", value="en")
         bilingual = st.checkbox("Bilingual output", value=False)
-        use_mock = st.checkbox("Use mock translator (local test)", value=not is_cloud)
+        use_mock = st.checkbox("Use mock translator (local test)", value=False)
         if privacy_lock:
             persist_outputs = False
             resume_from_checkpoint = False
