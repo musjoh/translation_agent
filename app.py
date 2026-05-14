@@ -105,6 +105,23 @@ def main() -> None:
             type=["pdf", "docx", "txt"],
             help="Machine-readable PDF, DOCX, or TXT.",
         )
+        
+        model_provider = st.selectbox(
+            "Model Provider",
+            options=["DeepSeek", "Qwen (通义千问)", "Custom"],
+            help="Select the AI model provider to use.",
+        )
+        
+        if model_provider == "DeepSeek":
+            default_base_url = "https://api.deepseek.com"
+            default_model = "deepseek-chat"
+        elif model_provider == "Qwen (通义千问)":
+            default_base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+            default_model = "qwen-plus"
+        else:
+            default_base_url = "https://api.openai.com/v1"
+            default_model = "gpt-4"
+        
         api_key = st.text_input(
             "API Key (BYOK)",
             type="password",
@@ -112,10 +129,10 @@ def main() -> None:
         )
         base_url = st.text_input(
             "Base URL",
-            value="https://api.deepseek.com",
+            value=default_base_url,
             help="Any OpenAI-compatible endpoint.",
         )
-        model_name = st.text_input("Model", value="deepseek-chat")
+        model_name = st.text_input("Model", value=default_model)
         source_lang = st.text_input("Source Language", value="auto")
         target_lang = st.text_input("Target Language", value="en")
         bilingual = st.checkbox("Bilingual output", value=False)
