@@ -108,14 +108,14 @@ def main() -> None:
         
         model_provider = st.selectbox(
             "Model Provider",
-            options=["DeepSeek", "Qwen (通义千问)", "Custom"],
+            options=["Qwen", "DeepSeek", "OpenAI"],
             help="Select the AI model provider to use.",
         )
         
         if model_provider == "DeepSeek":
             default_base_url = "https://api.deepseek.com"
             default_model = "deepseek-chat"
-        elif model_provider == "Qwen (通义千问)":
+        elif model_provider == "Qwen":
             default_base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
             default_model = "qwen-plus"
         else:
